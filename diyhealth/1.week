@@ -1,0 +1,90 @@
+/*
+* DS for class content
+*/
+
+module.exports = {
+  "lecture":[]
+  "question":[]
+};
+
+/*******************/
+
+film : 'behaviouristics testlab' (viemo)
+speculative design - don't get caught up in the implementation details
+
+what are we doing?  {
+  WHO health : "a state of complete phys, ment, social well-bing"
+  social : relational processes
+  sgdea: H mostly driven by behavior, rather than genetics
+
+  trad medcare : focuses on fixing sickness NOT prevention (we will not focus on this heavily) (ie repair)
+  sgdean: interesting time in Hcare field - accelerators, startups .. opportunity
+
+  selfcare {
+    help us take better care of ourselves - keep us from diving into sickness
+    prevention less necessary - 80% of chronic diseases are preventable
+  }
+
+  designing a system {
+    what is a system?
+    how do you model a system?
+    this methodology / systematic way of thinking == a better path to solutions that are measurable
+    monitoring
+    goal-setting
+  }
+
+  what systems do you use right now? {
+  }
+
+  what's the final deliverable(s)? {
+    make a system -
+    interactive viz - feedback systems - interfaces - prototypes - physical things
+    problem statements - concepts - test & refines solns
+    "high fidelity" prototypes - solution OVER implementation
+  }
+
+  goals {
+    "understand how ACTIONS & BEHAVIORS lead to achieving goals"
+    "learn how behavior change works"
+    learn how to design behavior change (will look at existing behavior change systems)
+    we will learn how to model a system - what is a system - how can we model it?
+  }
+
+  use the blog - comment and upload assignments
+
+  sgdean on DIYHealth{
+    each individual as a designer of their own life
+    tumblr a meta design tool
+    think of yourself as a meta designer
+    x will design a system for him/herself - that enables others to design their own lives
+    the need for designers in healthcare - endless amount of opp - 
+    ...bring aesthetics to the process - great UX to the building and designing of systems
+  }
+
+  we are the meta designer
+  blog pwd : diyhealth
+
+  how to use the blog{
+
+  }
+
+  assignments {
+    listen to entire podcast and watch the video -> write a reaction to the podcast
+    write your reaction as a comment
+    the perfected self in the Atlantic
+    read and write a reaction
+    personal analytics of my life - wolfram
+    read and comment
+    reframing health to embrance ...
+    optionals : in case you're hungry
+    ---------------------------------
+    write about what you tracked what did you learn 4-5 slides
+    ---------------------------------
+    memorable experience you've had with your health - or soemone elses
+  }
+
+  ohours {
+    12 - 1 : right after this class (or earlier)
+  }
+
+}
