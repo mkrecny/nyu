@@ -1,0 +1,38 @@
+.stack-el{
+  font-size:1.3em;
+  font-weight:100;
+  margin:0px auto;
+}
+
+.navigator{
+  font-weight:400;
+}
+
+.navigator a {
+  font-size:1.6em;
+  color:#202020;
+  text-decoration:none;
+}
+
+.skinny{
+  width:50%;
+}
+
+.slim{
+  width:65%;
+}
+
+.wide{
+  width:80%;
+}
+
+.full{
+  width:99%;
+}
+
+.headroom-s{
+  margin-top:20px;
+}
+.footroom-s{
+  margin-bottom:20px;
+}

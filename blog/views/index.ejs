@@ -1,0 +1,12 @@
+<div class="stack-el navigator skinny">
+  <a href="/">classes</a>
+  <% if (classname){ %>
+  / <a href="/class/<%= classname %>"><%= classname %></a> 
+  <% } %>
+  <% if (week){ %>
+  / <a href="/class/<%= classname %>">week <%= week %></a>
+  <% } %>
+</div>
+<div class="stack-el full">
+  <%- partial(contentPartial) %>
+</div>
