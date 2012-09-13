@@ -4,9 +4,16 @@
   / <a href="/class/<%= classname %>"><%= classname %></a> 
   <% } %>
   <% if (week){ %>
-  / <a href="/class/<%= classname %>">week <%= week %></a>
+  / <a href="/class/<%= classname %>/week/<%= week %>">week <%= week %></a>
+  <% } %>
+  <% if (assignment){ %>
+  / <a href="/class/<%= classname %>/week/<%= week %>/assignment/<%= assignment %>"><%= assignment %></a>
   <% } %>
 </div>
 <div class="stack-el full">
   <%- partial(contentPartial) %>
+</div>
+<div class="stack-el skinny footroom-l">
+<hr>
+  This site made by <a href="http://recb.org">Myles</a>
 </div>
