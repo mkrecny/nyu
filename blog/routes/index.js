@@ -16,7 +16,7 @@ exports.index = function(req, res){
 //render all weeks of a class
 exports.class = function(req, res){
   res.render('index', {
-    contentPartial :'class_index',
+    contentPartial :'class_index_'+req.params.class,
     classname: req.params.class,
     week: false,
     assignment: false
