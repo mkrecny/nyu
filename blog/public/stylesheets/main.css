@@ -34,9 +34,21 @@
   width:99%;
 }
 
+.headroom-t{
+  margin-top:5px;
+}
 .headroom-s{
   margin-top:20px;
 }
+
+.headroom-m{
+  margin-top:40px;
+}
+
+.headroom-l{
+  margin-top:60px;
+}
+
 .footroom-s{
   margin-bottom:20px;
 }

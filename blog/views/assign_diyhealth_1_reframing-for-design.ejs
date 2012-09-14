@@ -1,0 +1,157 @@
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+<link href="/stylesheets/reframing.css" rel="stylesheet">
+<div style="font-size:1.3em;font-weight:400;line-height:1;letter-spacing:1px;" class="stack-el skinny headroom-m">
+<p>
+  This proto-interface for a fictional business 'Bevolve' is my reaction to
+  <a href="http://www.dubberly.com/wp-content/uploads/2010/05/ddo_article_ReframingHealth.pdf">
+  Reframing health to embrace design of our own well-being.
+  </a>
+</p>
+<p style="font-size:0.9em;font-weight:100;letter-spacing:1px;"><i>
+“Individuals are becoming 
+more engaged in a variety of self-testing and self-management of conditions, symptoms, genomics 
+and blood biomarkers, behaviors and personal 
+environmental factors. Individuals could dramatically 
+expand their use of web-based tools, devices and 
+health-based social networking platforms as their 
+awareness increases, costs drop, financial incentives 
+arise and automated tools proliferate”
+</i><br>
+-- Melanie Swan
+</p>
+<hr>
+</div>
+</p>
+<div class="navbar headroom-m skinny stack-el">
+  <div class="navbar-inner">
+    <a class="brand"><b>Bevolve</b></a>
+    <ul class="nav">
+      <li id="bevolve-home" class="active bevolve-nav"><a>Home</a></li>
+      <li id="bevolve-design" class="bevolve-nav"><a >New Goal</a></li>
+      <li id="bevolve-track" class="bevolve-nav"><a>Dashboard</a></li>
+    </ul>
+  </div>
+</div>
+<div id="bevolve-content" class="bevolve-intro stack-el skinny">
+</div>
+
+<script id="bevolve-home-template" type="text/template">
+  <h2>Hello, Designer.</h2>
+  <div class="">
+  <p style="line-height:1;ont-size:1.2em;font-weight:400">
+    Bevolve enables you to <b>design</b> health goals, and <b>manage</b> your progress.<br><br>
+    You're <b>not alone</b> here. 
+    We apply <b>machine learning</b> to our user data to provide suggestions for your
+    <b>physical</b>, <b>mental</b> and <b>social</b> self</b>.
+  </p>
+  </div>
+  <p>
+    <a class="headroom-t btn btn-primary btn-large">
+      Learn more
+    </a>
+  </p>
+</script>
+<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+
+<script id="bevolve-design-template" type="text/template">
+<p>
+  1.What type of goal are you trying to achive?
+</p>
+<p>
+ <div class="btn-group">
+   <a class="btn btn-large dropdown-toggle" data-toggle="dropdown" href="#">
+    Goal Type    
+   <span class="caret"></span>
+   </a>
+   <ul class="dropdown-menu">
+    <li><a>Physical</a></li>
+    <li><a>Mental</a></li>
+    <li><a>Social</a></li>
+   </ul>
+ </div>
+ </p>
+<p>
+  2.What do you want to measure?
+</p>
+<p>
+ <div class="btn-group">
+   <a class="btn btn-large dropdown-toggle" data-toggle="dropdown" href="#">
+    Measurement    
+   <span class="caret"></span>
+   </a>
+   <ul class="dropdown-menu">
+    <li><a>BMI</a></li>
+    <li><a>Daily Social Interactions</a></li>
+    <li><a>Myelin Density</a></li>
+   </ul>
+ </div>
+</p>
+<p>
+  3.What value do you want to achieve?
+</p>
+<input type="text" placeholder="e.g. 200"/>
+<p>
+  4.How soon?
+</p>
+<p>
+ <div class="btn-group">
+   <a class="btn btn-large dropdown-toggle" data-toggle="dropdown" href="#">
+    Time
+   <span class="caret"></span>
+   </a>
+   <ul class="dropdown-menu">
+    <li><a>1 week</a></li>
+    <li><a>2 weeks</a></li>
+    <li><a>1 month</a></li>
+    <li><a>6 months</a></li>
+   </ul>
+ </div>
+ </p>
+ <p>
+ <a class="btn btn-primary btn-large btn-success">
+  Save New Goal
+ </a>
+ </p>
+</script>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script id="bevolve-track-template" type="text/template">
+  <script type="text/javascript">
+     console.log('google', google);
+
+     var data = google.visualization.arrayToDataTable([
+       ['Date', 'BMI', 'Social'],
+       ['12',  35,      3],
+       ['13',  33,      6],
+       ['14',  25,      15],
+       ['15',  22,      30]
+     ]);
+
+    var options = {
+       title: 'Social Interactions vs BMI',
+       hAxis: {title: 'Date',  titleTextStyle: {color: 'red'}},
+       colors:['yellow', 'blue'],
+       chartArea:{top:25}
+     };
+    
+     console.log('google');
+     var chart = new google.visualization.AreaChart(document.getElementById('bevolve-content'));
+     chart.draw(data, options);
+   </script>
+</script>
+
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+</script>
+
+<script type="text/javascript">
+  $('.bevolve-nav').click(function(){
+    $('.bevolve-nav').each(function(){
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
+
+    $('#bevolve-content').html($('#'+$(this).attr('id')+'-template').html());
+  });
+  $('#bevolve-content').html($('#bevolve-home-template').html());
+</script>
