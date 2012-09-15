@@ -1,0 +1,144 @@
+<div class="stack-el skinny">
+
+<p>
+  <i>
+    This is a reaction to <a href="http://blog.stephenwolfram.com/2012/03/the-personal-analytics-of-my-life/">
+    The Personal Analytics of My Life</a> by <a href="http://en.wikipedia.org/wiki/Stephen_Wolfram">Stephen Wolfram</a>
+  </i>
+</p>
+
+<p>
+  I think the advent of APIs - for things like twitter, facebook and gmail
+  makes doing personal analytics a lot easier than it was before. We're all
+  entrenched, pouring our lives into these platform. Without realizing it we have created
+  opportunities to do personal analytics.
+</p>
+
+<p>
+  For example, here's a little bit of self-analysis I did on my tweeting habits. It 
+  shows the total number of tweets I've made on each day of the week over the past
+  2 years or so.
+</p>
+
+ <div id="chart_div" style="height:400px;width:800px;"></div>
+
+<p>
+  What worries me about these platforms is that they're products. You don't
+  actually own your data like Wolfram does. One day these companies might go
+  away and so will you data - and your opportunity for self-tracking. I think
+  the only 'safe' way to do this kind of digital self-tracking is to learn how
+  to code and do it yourself. E.g. you should be exporting your tweets, emails and 
+  facebook data on a regular basis - and saving them to a disk that you
+  own, not a disk that you rent.
+</p>
+
+<p>
+  Here's some code that I wrote to export all your tweets using node.js.
+</p>
+</div>
+
+<div style="font-size:1em;width:70%" class="stack-el">
+  <script src="https://gist.github.com/3729026.js?file=tweet-xport.js"></script>
+</div>
+
+<div class="stack-el skinny">
+<p>
+  Below I've responded to some of the stuff that stood out to me in the Wolfram
+  article
+</p>
+
+<p>
+  <i>
+    "It was easier just to keep everything than to worry 
+    about what specifically was worth keeping."
+  </i>
+</p>
+
+<p>
+  It strikes me that this logical, but probably uncommon attitude is the 
+  main reason why Wolfram is such a successful example
+  in personal analytics. Also, given that he spends most of his day
+  providing input to a digital system and has hardcore technical skills,
+  personal analytics is relatively easy for him.
+</p>
+
+<p>
+  <i>
+    "Every day—in an effort at 'self-awareness', I have 
+    automated systems send me a few emails about the day before."
+  </i>
+</p>
+
+<p>
+  I'm sad that Wolfram doesn't go into more detail on this. The use of 
+  inverted commas around 'self-awareness' implies that he almost doesn't
+  take the concept of self-awareness too seriously. I wonder if this system 
+  creates a sense of long-term trends over time, or if you only 
+  remember the last few days.
+</p>
+
+<p>
+  <i>
+    "The more routine I can make the basic practical aspects of my life, 
+    the more I am able to be energetic and spontaneous about intellectual 
+    and other things."
+  </i>
+</p>
+
+<p>
+  That's an extremely powerful hypothesis, and to me, the most interesting 
+  concept in this article. However, Wolfram doesn't dive in to how he
+  used his data to 'routineize' the practical aspects of his life. 
+  This is something I'd really like more color on.
+</p>
+
+<p>
+  <i>
+    "For me one of the objectives is to have ideas, and hopefully 
+    good ones. so can personal analytics help me measure the rate 
+    at which that happens?"
+  </i>
+</p>
+
+<p>
+  I wonder how Wolfram would act upon such data. The way I imagine it
+  is something like this. He notices that at a certain period in his life,
+  the rate at which he had new ideas was uncommonly high. Then he drills into
+  all sorts of other data from that period, and attempts to determine why
+  his ideation rate was so high at that time. From there he would go about 
+  recreating those conditions - and thus have lots of new ideas. Imagine a 
+  system that could do that analysis automatically, and introduce the favorable
+  conditions into your life without you even being aware of it.
+</p>
+
+
+
+</div>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    
+    var data = google.visualization.arrayToDataTable([
+      ['Day', 'Tweets'],
+      ['Mon',  359],
+      ['Tue',  409],
+      ['Wed',  428],
+      ['Thu',  424],
+      ['Fri',  377],
+      ['Sat',  322],
+      ['Sun',  241]
+    ]);
+
+    var options = {
+      title: 'My Twitter Week',
+      hAxis: {title: 'Tweets', titleTextStyle: {color: 'red'}},
+      chartArea:{left:50}
+    };
+
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
