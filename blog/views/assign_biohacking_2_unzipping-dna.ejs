@@ -1,0 +1,139 @@
+<div id="canvas-container">
+  <img id="arrow" src="/images/arrowleft.gif" />
+  <canvas height="500" width="900" id="canvas">
+  </canvas>
+</div>
+<style>
+  #arrow{
+    position:absolute;
+    top:305px;
+    width:80px;
+  }
+  #canvas-container{
+    margin:0px auto;
+    width:900px;
+    height:500px;
+  }
+  #canvas{
+  }
+  .pair-letter{
+    font-size:24px;
+    color:black; 
+    z-index:10000;
+    font-weight:800;
+  }
+</style>
+
+<script type="text/javascript" src="/javascripts/riffwave.js"></script>
+<script type="text/javascript">
+(function(){
+
+  if (!canvas.getContext){
+    alert('Canvas not supported');
+    return false;
+  }
+
+  var cvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  var height = cvas.height;
+  var width = cvas.width;
+
+  var basePairs = [ ['A','T'],['T','A'],['G','C'],['C','G']];
+
+  var toneMap ={
+    'A':3,
+    'T':4,
+    'G':5,
+    'C':6,
+  };
+
+  var soundMap ={};
+
+  var colorMap ={
+    'A':'red',
+    'T':'blue',
+    'G':'yellow',
+    'C':'green'
+  }
+
+  function drawHelix(basePairs, sign){
+    var interval = width/basePairs.length; 
+    var y = sign>0 ? height-(3*(height/7)):3*(height/7);
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = '#333';
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    basePairs.forEach(function(pair, i){
+      var letter = sign>0 ? pair[0] : pair[1];
+      var _x = (i*interval);
+      var _y = y+(i*5*(i/2)*sign);
+      var adjust = sign>0 ? 5: -35;
+      drawBaseLetter(_x, _y+adjust, letter);
+      ctx.lineTo(_x,_y);
+    });
+    ctx.stroke();
+  }
+
+  function getBaseHtml(x, y, letter){
+    var top = $('#canvas').position().top+y, left = $('#canvas').position().left+x;
+    return '<div class="pair-letter" style="color:'+colorMap[letter]+';position:absolute;top:'+top+'px;left:'+left+'px;">'+letter+'</div>';
+  }
+
+  function drawBaseLetter(x, y, letter){
+    $('#canvas-container').prepend(getBaseHtml(x,y, letter));
+  }
+
+  function drawPolymerase(){
+
+  }
+
+  function getNewBasePair(){
+    return basePairs[Math.floor(Math.random()*basePairs.length)];
+  }
+
+  function getDnaArray(length){
+    var dna = [];
+    for (var i=0; i<length; i++){
+      dna.push(getNewBasePair());
+    }
+    return dna;
+  }
+
+  function setupTones(){
+    ['A','T','G','C'].forEach(function(letter){
+      var sine = []; 
+      for (var i=0; i<300; i++) {
+        sine[i] = 128+Math.round(127*Math.sin(i/toneMap[letter]))
+      }
+      var wave = new RIFFWAVE(sine);
+      var audio = new Audio(wave.dataURI);
+      soundMap[letter] = audio;
+    });
+  }
+
+  function playDna(dna){
+    var sine = []; 
+    for (var i=0; i<300; i++) {
+      sine[i] = 128+Math.round(127*Math.sin(i/toneMap[dna[0][0]]))
+    }
+    var wave = new RIFFWAVE(sine);
+    var audio = new Audio(wave.dataURI);
+    audio.play();
+  }
+  
+  setupTones();
+  var dna = getDnaArray(10);
+  
+  setInterval(function(){
+    $('.pair-letter').remove();
+    ctx.clearRect(0, 0, width, height);
+    dna.pop();
+    dna.unshift(getNewBasePair());
+    drawHelix(dna, -1);
+    drawHelix(dna, 1);
+    var letter = dna[0][0];
+    soundMap[letter].play();
+  }, 100);
+
+})();
+</script>
