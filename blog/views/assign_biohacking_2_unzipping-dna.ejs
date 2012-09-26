@@ -72,6 +72,20 @@
       ctx.lineTo(_x,_y);
     });
     ctx.stroke();
+    basePairs.forEach(function(pair, i){
+      var letter = sign>0 ? pair[0] : pair[1];
+      var _x = (i*interval);
+      var _y = y+(i*5*(i/2)*sign);
+      /*var adjust = sign>0 ? 5: -35;
+      drawBaseLetter(_x, _y+adjust, letter);
+      ctx.lineTo(_x,_y);*/
+      ctx.beginPath();
+      ctx.strokeStyle = colorMap[letter];
+      ctx.moveTo(_x, _y);
+      var adjust = sign >0 ? -40: 40;
+      ctx.lineTo(_x,_y+adjust);
+      ctx.stroke();
+    });
   }
 
   function getBaseHtml(x, y, letter){
@@ -81,10 +95,6 @@
 
   function drawBaseLetter(x, y, letter){
     $('#canvas-container').prepend(getBaseHtml(x,y, letter));
-  }
-
-  function drawPolymerase(){
-
   }
 
   function getNewBasePair(){
