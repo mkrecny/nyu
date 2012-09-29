@@ -1,5 +1,6 @@
 <div class="stack-el navigator skinny headroom-s">
-  <a href="/">classes</a>
+<% if (!thought){ %>
+  <a href="/">root</a>
   <% if (classname){ %>
   / <a href="/class/<%= classname %>"><%= classname %></a> 
   <% } %>
@@ -9,6 +10,7 @@
   <% if (assignment){ %>
   / <a href="/class/<%= classname %>/week/<%= week %>/assignment/<%= assignment %>"><%= assignment %></a>
   <% } %>
+<% } %>
 </div>
 <div class="stack-el full">
   <%- partial(contentPartial) %>

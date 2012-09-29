@@ -9,9 +9,20 @@ exports.index = function(req, res){
     contentPartial : 'classes',
     classname: false,
     week:false,
-    assignment:false
+    assignment:false,
+    thought:false
   });
 };
+
+exports.thought = function(req, res){
+  res.render('index', {
+    contentPartial :req.params.thought,
+    classname: false,
+    week: false,
+    assignment: false,
+    thought:req.params.thought
+  });
+}
 
 //render all weeks of a class
 exports.class = function(req, res){
@@ -19,7 +30,8 @@ exports.class = function(req, res){
     contentPartial :'class_index_'+req.params.class,
     classname: req.params.class,
     week: false,
-    assignment: false
+    assignment: false,
+    thought: false
   });
 };
 
@@ -29,7 +41,8 @@ exports.week = function(req, res){
     contentPartial :'class_'+req.params.class+'_'+req.params.week,
     classname: req.params.class,
     week: req.params.week,
-    assignment: false
+    assignment: false,
+    thought: false
   });
 };
 
@@ -39,6 +52,7 @@ exports.assignment = function(req, res){
     contentPartial :'assign_'+req.params.class+'_'+req.params.week+'_'+req.params.assignment,
     classname: req.params.class,
     week: req.params.week ,
-    assignment: req.params.assignment
+    assignment: req.params.assignment,
+    thought: false
   });
 };
