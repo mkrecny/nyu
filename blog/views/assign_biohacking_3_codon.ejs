@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="/reveal/css/main.css">
+<link rel="stylesheet" href="/stylesheets/pres.css">
+<div id="rvl-cont" class="reveal">
+  <div class="slides"> 
+    <section>
+      <p style="margin-top:110px">
+        CODON  
+      </p>
+        <embed src="/images/dna.svg" type="image/svg+xml" />
+      <p>
+        (a programming language)
+      </p>
+      <!--<embed src="/images/headphones.svg" type="image/svg+xml" />
+      <embed src="/images/brain.svg" type="image/svg+xml" />-->
+    </section>
+    <section>
+      <p style="margin-top:110px">
+        Reading Frames
+      </p>
+      <embed src="/images/glasses.svg" type="image/svg+xml" />
+      <p>
+        Not one, but many interpretations
+      </p>
+    </section>
+    <section>
+      <p style="margin-top:145px">
+        A;B;C;D;
+      </p>
+      <p>
+        B;C;D;A;
+      </p>
+      <p>
+        C;D;A;B;
+      </p>
+      <p>
+        D;A;B;C;
+      </p>
+    </section>
+    <section>
+      <p style="margin-top:70px">
+        n symbols => n 'interpretations'
+      </p>
+      <p>
+        each different
+      </p>
+      <p>
+        not just a re-ordering
+      </p>
+      <p>
+        <b>symbol semantics defined by symbol context</b>
+      </p>
+    </section>
+    <section>
+      <p style="margin-top:130px">
+        Goals
+      </p>
+      <p>
+        1. A small, terse syntax 
+      </p>
+      <p>
+        2. A parser
+      </p>
+    </section>
+    <section>
+      <p style="margin-top:130px">
+        Informational efficiency?
+      </p>
+      <p>
+        for every n symbols you write
+      </p>
+      <p>
+        <b>you are really writing n^2 executable symbols</b>
+      </p>
+    </section>
+    <section>
+      <p style="margin-top:130px">
+        So what?
+      </p>
+      <p>
+        we can store really <b>big programs</b>
+      </p>
+      <p>
+        in really <b>small spaces</b>
+      </p>
+      <p>
+        like DNA  
+      </p>
+    </section>
+  </div>
+</div>
+<script type="text/javascript" src="/reveal/js/reveal.min.js"></script>
+<script type="text/javascript" src="/reveal/lib/js/head.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.navigator').hide();
+    //$('.myles-footer').css('text-align', 'center');
+    $('.myles-footer').hide()
+    Reveal.initialize({
+    });
+  });
+</script>
