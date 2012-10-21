@@ -1,0 +1,111 @@
+<div class="stack-el skinny">
+  <p>
+    <span style="font-size:30px"><strong>Designing the Self - Prelude</strong></span>
+    <hr>
+  </p>
+  <p>
+    <i style="font-size:30px;margin-right:10px;" class="icon-thumbs-down"></i> 
+    <strong>I have a problem with negativity</strong>
+  </p>
+  <p>
+	  I recently wrote a blog post called <a href="/thoughts/be-nice-to-programmers">'Be nice to programmers'</a>. It's a playful exploration of the idea that programmers are prone to being negative because they spend large chunks of their life 'debugging'. Debugging is the process of figuring out what's wrong with your program, and it's ultimately what you spend most of your time doing as a programmer. It's a prolonged and low-level reflection on what you've done wrong.
+  </p>
+  <p>
+	  It's a necessarily negative mindset, one that permeates your mood long after the code session is over. I've recognized a negative attitude unfurling in myself since I started programming full-time nearly 3 years ago. 
+  </p>
+
+  <p>
+	  This negative attitude is what I want to tackle in my project. 
+  </p>
+
+  <p>
+  <i>For me, health is nothing more or less than a positive attitude.</i>
+  </p>
+  <p>
+	I honestly believe that with a positive attitude in place, my health will bloom in all of its dimensions.
+  </p>
+
+  <p>
+	Let's decompose this negative attitude, it has a few ugly visages.
+  </p>
+
+  <p>
+    <ol>
+      <li>self-hate</li>
+      <li>hate of others</li>
+      <li>lack of trust</li>
+      <li>jealousy (mostly of the Romantic sort)</li>
+      <li>feelings of insecurity (mostly related to my appearance)</li>
+      <li>feelings of hopelessness</li>
+      <li>anxiety about the future</li>
+    </ol>
+  </p>
+
+  <p>
+	I think I spend way too much time in one of these 7 mindsets. On many days it feels like I never escape their gravitational pull. So, by contrast, what does a healthy moment look like, and how do I get there?
+  </p>
+
+  <p>
+  <i style="font-size:30px;margin-right:10px;" class="icon-search"></i> 
+  <strong>Where do I want to be?</strong>
+  </p>
+  <p>
+	I'm a fairly binary person in the sense that I don't spend a lot of time feeling 'okay'. Usually I feel either horrible or elated. I don't spend much time in-between these two states. The only exception is when I'm in 'the flow', which usually takes the form of coding, thinking about things I want to code or improvising music. I think flow is a third state that's basically healthy, but the flow can be towed by an undercurrent that's negative or positive.
+  </p>
+
+  <p>
+	I don't think that I should be trying to be in my 'elated' state all the time. It's exhausting. It's not sustainable. What I'd love is to have a solid happy baseline. I imagine it being sort-of 75% elated. It's a state where I'm not reflecting on something I don't like about myself, or someone else. I'm not reflecting on possible bad outcomes in my future. I'm not reflecting on bad things in my past. For the most part I'm living in the moment, and focusing on what's going on right now. If I'm reflecting on something, it's the positive aspects of something or someone. It's a bright and sunny picture of my future.
+  </p>
+
+  <p>
+	I've been rocked recently by some things I've read and watched about positivity. Dan Pink thinks that a positive brain is a successful brain. He has some methods around forming a positive brain that will inform the system I design. Karen Pryor thinks that positive reinforcement is the best way to change / achieve a desired behavior - I'll be integrating a positive reinforcement loop into my system as well.
+  </p>
+  
+  <p>
+    <i>
+      My takeaway is that mentally focusing on the positive aspects of your life, yourself and others makes you ... positive.
+    </i>
+  </p>
+
+  <p>
+	In short, what I want to build is a system that forces me to be positive. It's going to involve texting, cron and graphs.
+  </p>
+
+  <p>
+  <i style="font-size:30px;margin-right:10px;" class="icon-cogs"></i> 
+	<strong>Getting there: components</strong>
+  </p>
+
+  <ol>
+	<li>Every day at a different time* the user receives a text message like this. "Tell me about something fantastic that happened today"</li>
+
+	<li>All responses by the user are logged in a database.</li>
+
+	<li>Failure to respond within 2 hours will prompt another attempt.</li>
+
+	<li>Once a week the user gets texted a link to a summary page which shows them everything that's been awesome about this week.</li>
+  </ol>
+
+  <p>
+	It should be noted that the desired behavior of this system isn't to make people happier. It's more specific than that. It's to make people write down something positive every day. The system doesn't actuate on the positivity level of the user. I don't want to be too ambitious. 
+  </p>
+
+	<i>* Text times will be within waking hours but somewhat randomized to 1. create a meaningful statistical mapping of times of day to positivity 2. create a sense of randomness/reality for the user</i>
+
+  <p>
+  <i style="font-size:30px;margin-right:10px;" class="icon-github"></i> 
+	<strong>Technical notes</strong>
+  <ul>
+    <li>Twilio API - (how long can I do this for free?)</li>
+    <li>Run http server to receive texts on node.js</li>
+    <li>Google graphing API for visualizing positivity over time</li>
+    <li>Positivity detection algorithm (what does twitter use)</li>
+    <li>Cron to automate all text sending</li>
+    <li>Simple twitter bootstrap phone # input form</li>
+    <li>Graphs are private unless user specifies</li>
+    <li>Open Source?</li>
+  </ul>
+  </p>
+
+
+</div>
