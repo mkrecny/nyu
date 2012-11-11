@@ -1,0 +1,135 @@
+<!--Goal-->
+<div class="boxel boxel-orange" style="border-radius:10px;top:80px;left:500px;right:500px;">
+<b>0. Goal</p>
+<p>Positivity level 'p'  70% &lt; p &lt; 80%</p>
+</div>
+
+<!--System box-->
+<div class="boxel boxel-yellow" style="top:200px;left:300px;right:300px;height:400px">
+</div>
+
+<!--Comparator copy-->
+<div class="boxel boxel-white" style="border-radius:10px;color:#808080;top:300px;left:600px;right:600px;">
+<b>2. Comparator</p>
+<p>Is p 70% &lt; p &lt;80%?</p>
+</div>
+
+<!--Sensor-->
+<div class="roundel boxel-orange" style="top:350px;left:250px;width:75px;height:75px;">
+</div>
+<!--Sensor copy-->
+<div class="boxel boxel-green" style="top:320px;left:25px;width:200px;">
+<b>1. Sensor</b>
+<p>The individual thinks about how he feels. Makes a guess at the current positivity level.</p>
+</div>
+
+<!--Actuator-->
+<div class="roundel boxel-orange" style="top:350px;right:250px;width:75px;height:75px;">
+</div>
+<!--Actuator copy-->
+<div class="boxel boxel-green" style="top:320px;right:75px;width:150px;">
+<b>3. Actuator</b>
+<p>Do stuff to either bring me up - or bring me down.</p>
+</div>
+
+<!--Environment-->
+<div class="boxel boxel-orange" style="border-radius:10px;top:550px;left:600px;right:600px;">
+<b>5. Environment</p>
+<p>Current positivity level</p>
+</div>
+
+<!--Disturbances-->
+<div class="boxel boxel-red" style="border-radius:10px;top:670px;left:600px;right:600px;">
+<b>Disturbances</p>
+<ul>
+  <li>Anything non-actuator that affects individuals mood</li>
+</ul>
+</div>
+<div style="margin-top:820px" class="stack-el skinny">
+  <p>
+    Sensor
+    <hr>
+  </p>
+  <p>
+    <ul>
+      <li>Range: Probably 15% to 85% - either side of this and you're too depressed / too happy to be sensing effectively</li>
+      <li>Frequency: Depends on what you're doing. If you're in the sweet zone you probably aren't thinking about it.
+      For now let's say every 15mins.</li>
+      <li>Resolution: 5%. I don't think i can tell the difference between 50% and 55% of my total ossible positivity.</li>
+    </ul>
+  </p>
+  <p>
+    Comparator 
+    <hr>
+  </p>
+  <p>
+    <ul>
+      <li>Range: same as above</li>
+      <li>Frequency: same as above</li>
+      <li>Resolution: same as above</li>
+    </ul>
+  </p>
+  <p>
+    Actuator
+    <hr>
+  </p>
+  <p>
+    <ul>
+      <li>Range: 0% to 30% - it's harder to imagine a single actuation improving mood more than 30%</li>
+      <li>Frequency: defined by frequency of sensing and comparing - 15mins</li>
+      <li>Resolution: infinite - but the sensor won't detect</li>
+    </ul>
+  </p>
+  
+</div>
+
+<style>
+  .boxel{
+    font-size:16px;
+    color:white;
+    position:absolute;
+    padding:10px;
+    text-align:center;
+  }
+
+  .roundel{
+    font-size:16px;
+    color:white;
+    border-radius:100px;
+    position:absolute;
+    padding:10px;
+    text-align:center;
+  }
+
+  .boxel:hover{
+    opacity:0.9;
+    cursor:pointer;
+  }
+
+  .boxel-orange{
+    background-color:#F89883;
+  }
+
+  .boxel-blu{
+    background-color:blue;
+  }
+
+  .boxel-green{
+    background-color:#81AC8B;
+  }
+
+  .boxel-white{
+    background-color:white;
+  }
+
+  .boxel-red{
+    background-color:#D96666;
+  }
+
+  .boxel-yellow{
+    background-color:#F2E5A2;
+  }
+  .myles-footer{
+    display:none;
+  }
+</style>
