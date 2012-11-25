@@ -1,0 +1,40 @@
+<div class="stack-el skinny">
+    <b>Mutations and metaphors</b>
+  <hr>
+  <p>
+  I think mutation occurs in lots of systems that are roughly 'biological', and should be studied in these various different contexts. 
+  I think it'd be cool if we learnt stuff about mutation as a phenomenon outside of biology.
+  </p>
+
+  <p>
+  If a URL were something biological, what would it be? Let's say it was an organism. How would you measure the success of such an 'organism' in this loose-fitting metaphor? Maybe with traffic stats, i.e. how often is that URL being visited. In this metaphor, google.com would be the most successful organism in the game.
+  </p>
+
+  <p>
+  What about mutation? Is foogle.com a mutation of google.com? How often is that mutation occurring? In other words, how often are people's fingers mis-typing google.com? What properties of a given organism affect how, and how often mutation occurs? What informational features of the string 'google.com' determine stuff about its' mutants?
+  </p>
+
+  <p>
+  I've been writing <a href="http://github.com/mkrecny/musquat">some code</a> that can have a stab at answering these questions. 
+  </p>
+
+  <p>
+  Here's the broad strategy:
+  </p>
+
+  <ol>
+  <li>Write a scraper for alexa.com to grab info about the top 500 most visited sites on the internet.</li>
+
+  <li>Have an algorithm that will determine most probable mutations for a given top site. <a href="https://github.com/mkrecny/musquat/blob/master/map.js">This</a> is one parameter to such an algorithm. It maps keys to their likely mutations on a qwerty keyboard.</li>
+
+  <li>Programmatically run a whois on each mutation, record whether or not it's registered. This data is interesting in itself as it indicates that a certain mutant has reached a threshold or actual or suspected popularity - unfortunately the info is binary.</li>
+
+  <li>Create a ranked list of unregistered mutant domains (ranked by parent popularity).</li>
+
+  <li>Register n of the top mutants.</li>
+
+  <li>Record traffic stats.</li>
+
+  <li>Writeup results and profit.</li>
+  </ol>
+</div>
