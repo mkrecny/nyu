@@ -1,4 +1,5 @@
-
+var fs = require('fs');
+var mudex = require('./mudex.js');
 /*
  * GET home page.
  */
@@ -13,6 +14,17 @@ exports.index = function(req, res){
     thought:false
   });
 };
+
+exports.mudex = function(req, res){
+  res.render('index', {
+    data:mudex,
+    contentPartial :'mudex',
+    classname: false,
+    week: false,
+    assignment: false,
+    thought:false
+  });
+}
 
 exports.thought = function(req, res){
   res.render('index', {

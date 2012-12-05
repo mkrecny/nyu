@@ -1,0 +1,172 @@
+<div class="stack-el skinny">
+  <p style="font-size:110%">
+    <b>Mutation on the Web</b>
+    <hr>
+  </p>
+  <p>
+    <b>Impetus</b>
+  </p>
+  <p>
+    I think mutation occurs in lots of systems that are roughly 'biological', and should be studied in these various different contexts. 
+    Here, I explore the mutation that occurs when people make errors entering a URL at their computer. The notion is
+    best demonstrated via an example. A user entering 'google.com' may make an error and instead type
+    'foogle.com' or 'gppgle.com'. Here are some of the 'mutations' of google.com that involve one mistake, including 
+    alph-numeric characters (not in the TLD).
+  </p>
+  <p>
+  <div style="margin:0px auto;width:80%;font-size:80%">
+    aoogle.com boogle.com coogle.com doogle.com eoogle.com foogle.com hoogle.com ioogle.com joogle.com koogle.com loogle.com moogle.com noogle.com ooogle.com poogle.com qoogle.com roogle.com soogle.com toogle.com uoogle.com voogle.com woogle.com xoogle.com yoogle.com zoogle.com 1oogle.com 2oogle.com 3oogle.com 4oogle.com 5oogle.com 6oogle.com 7oogle.com 8oogle.com 9oogle.com 0oogle.com gaogle.com gbogle.com gcogle.com gdogle.com geogle.com gfogle.com ggogle.com ghogle.com giogle.com gjogle.com gkogle.com glogle.com gmogle.com gnogle.com gpogle.com gqogle.com grogle.com gsogle.com gtogle.com guogle.com gvogle.com gwogle.com gxogle.com gyogle.com gzogle.com g1ogle.com g2ogle.com g3ogle.com g4ogle.com g5ogle.com g6ogle.com g7ogle.com g8ogle.com
+  </div>
+  </p>
+  <p>
+    I want to answer the following questions about this phenomenon:
+    <ol>
+      <li>How often does it occur?</li>
+      <li>Which mutations (single character errors) occur most frequently?</li>
+      <li>What features of a URL affect how and how often mutation occurs?</li>
+    </ol>
+  </p>
+  <p>
+    <b>Model Assumptions</b>
+  </p>
+  <p>
+    <ol>
+      <li>A registered mutant indicates that the mutation 'occurs'.</li>
+    </ol>
+  </p>
+  <p>
+    <b>Hypothesis</b>
+  </p>
+  <p>
+    My main hypothesis is that the number of mutations for a domain that are registered 
+    correlate positively with the domain's daily traffic. The notion is that domain-squatters
+    will be more incentivized to squat mutations of a really popular domain, in order to 
+    caputre a fragment some really high traffic.
+  </p>
+  <p>
+    <b>Methodology</b>
+  </p>
+  <p>
+    <ol>
+      <li>
+        The domains that I chose to examine were the top 500 most visited sites on the web.
+        I scraped these, and their traffic stats from alexa.com
+      </li>
+      <script src="https://gist.github.com/4208037.js?file=scrape_alexa.js"></script>
+      <li>
+        Compute all the permutations (mutations) for each of the domains. Here's the algorithm that does that:
+      </li>
+      <script src="https://gist.github.com/4208373.js?file=get_mutations.js"></script>
+      <li>
+        Check if the mutations for each URL are registered or unregistered:
+      </li>
+      <script src="https://gist.github.com/4208401.js?file=get_pct_registered.js"></script>
+      <li>
+        Record the results : <a href="https://github.com/mkrecny/musquat/tree/master/results">here is a repo of all mutations on the 500 top domains</a>
+      </li>
+      <li>
+        Compile traffic data and mutant registration data
+      </li>
+      <script src="https://gist.github.com/4208574.js?file=compile.js"></script>
+      The resulting file looks something like this:
+      <p>
+      <img src="/images/mudex.png" />
+      </p>
+      <p>
+      ...and is available <a href="https://github.com/mkrecny/musquat/blob/master/mudex.json">here</a>
+      </p>
+    </ol>
+  </p>
+  <p>
+    <b>Results</b>
+  </p>
+  <p>
+    
+  </p>
+  <div style="width:1200px;height:800px" id="chart_b"></div>
+  <div style="width:1200px;height:800px" id="chart_a"></div>
+  <div style="width:1200px;height:800px" id="chart_c"></div>
+  <div style="width:1200px;height:800px" id="chart_d"></div>
+
+  <p>
+    <b>//TODO</b>
+  </p>
+  <p>
+    <ol>
+      <li>How does length affect mudex?</li>
+      <li>How does char mutation affect mudex?</li>
+      <li>What fraction of mutes are registered by parent vs 3rd party?</li>
+    </ol>
+  </p>
+
+</div>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    
+    var data_a = google.visualization.arrayToDataTable([
+      ['', ''],
+      <% Object.keys(data).forEach(function(site, i){ %>
+        [<%= data[site].reg %>, <%= data[site].traffic %>]
+        <%= (i===Object.keys(data).length-1) ? '' : ',' %>
+      <% }); %>
+    ]);
+
+    var data_b = google.visualization.arrayToDataTable([
+      ['', ''],
+      <% Object.keys(data).forEach(function(site, i){ %>
+        ['<%= site %>', <%= data[site].traffic %>]
+        <%= (i===Object.keys(data).length-1) ? '' : ',' %>
+      <% }); %>
+    ]);
+
+    var options_a = {
+      title: 'Traffic Score vs Mudex',
+      legend:'none',
+      chartArea:{left:50},
+      hAxis: {title: 'Successful Mutations', minValue: 0, maxValue: 100},
+      vAxis: {title: 'Traffic Score', minValue: 0, maxValue: 100}
+    };
+
+    var chart_a = new google.visualization.ScatterChart(document.getElementById('chart_a'));
+    chart_a.draw(data_a, options_a);
+
+    var options_b = {
+      title: 'Site vs Traffic Score',
+      legend:'none',
+      chartArea:{left:50},
+      hAxis: {title: 'Sites'},
+      vAxis: {title: 'Traffic Score', viewWindow:{max:50, min:0}}
+    };
+
+    var chart_b = new google.visualization.LineChart(document.getElementById('chart_b'));
+    chart_b.draw(data_b, options_b);
+
+    var options_c = {
+      title: 'Traffic Score vs Mudex (low trafficked sites)',
+      legend:'none',
+      chartArea:{left:50},
+      hAxis: {title: 'Successful Mutations', minValue: 0, maxValue: 100},
+      vAxis: {title: 'Traffic Score', minValue: 0, maxValue: 100, viewWindow:{max:1, min:0}}
+    };
+
+    var chart_c = new google.visualization.ScatterChart(document.getElementById('chart_c'));
+    chart_c.draw(data_a, options_c);
+
+    var options_d = {
+      title: 'Traffic Score vs Mudex',
+      legend:'none',
+      chartArea:{left:50},
+      hAxis: {title: 'Successful Mutations', minValue: 0, maxValue: 100},
+      vAxis: {title: 'Traffic Score', minValue: 0, maxValue: 100, viewWindow:{max:50, min:5}}
+    };
+
+    var chart_d = new google.visualization.LineChart(document.getElementById('chart_d'));
+    chart_d.draw(data_a, options_d);
+  }
+
+</script>
