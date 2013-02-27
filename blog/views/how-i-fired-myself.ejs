@@ -1,0 +1,86 @@
+s<div style="width:550px" class="stack-el">
+  <p>
+    <span style="color:#353535"><b>How I Fired Myself.</b></span>
+    <hr>
+  </p>
+<p>
+	In July of 2010 I was 22 and working at a Social Gaming startup in California. I'd just graduated and this was my first real job. I had a pay check and an apartment. I felt grown-up, for the first time.
+</p>
+<p>
+	I was one of two 'engineers' writing code for the company's flagship product, an RPG. I'd studied Philosophy in college, and that meant that, while I knew how to think through a problem, my knowledge of best practices, and sensible design patterns was minimal. I wielded my basic LAMP knowledge, with incredible enthusiasm.
+</p>
+
+<p>
+	The game designers (my overlords) often took inspiration from World of Warcraft, the blisteringly successful MMO produced by Blizzard. At that time, WoW's 'Raids' feature, was being met by audiences with unsurpassed excitement and engagement. It was something that we wanted to emulate in our game very badly.
+</p>
+
+<p>
+	I was landed with the task of implementing Raids for our game. My team-mate (Sam) was stuck with an enormous refactor, and I felt lucky to be working on something new and exciting.
+</p>
+
+<p>
+	One of the peculiarities of my development environment was that I ran all my code against the production database. Looking back, it's baffling that we did this, and laughable that I didn't know enough to question it. 
+</p>
+
+<p>
+	I would inspect MySQL tables using a client, that had a GUI with a slick OSXy interface .. a far cry from phpmyadmin. Part of my naive testing process involved manually clearing the RAIDS table, to then recreate it programatically.
+</p>
+
+<p>
+	The monotony of this task lulled me into a stupor, on one lazy Tuesday afternoon, mid-afternoon found me drowsy, cursor hovering over the USERS table icon, to then bring up its menu and click 'clear'. 
+</p>
+
+<p>
+	The implications of what I'd just done didn't immediately hit me. I first had a truly out-of-body experience, seeming to hover above the darkened room of hackers, each hunched over glowing terminals.
+</p>
+
+<p>
+	So what were the implications? The game had tens of thousands of paying customers. Users who'd paid to buy special items within the game to enhance their character stats. All of these character stats were stored in the USERS table, now void.
+</p>
+
+<p>
+	About a minute later, one of the content managers walked into the room. "I think there's a problem", she said. I spoke up, "Yeah. I know what's wrong".
+</p>
+
+<p>
+	I found myself on the phone to Rackspace, leaning on a desk for support, listening to their engineer patiently explain that backups for this MySQL instance had been cancelled over 2 months ago. Ah.
+</p>
+
+<p>
+	By late afternoon, a greasy layer of uneasiness had settled thickly on top of the building. People knew that something was wrong, but only a few knew what was wrong. I had been pulled into an emergency 'engineers + higher-ups' meeting in the conference room.
+</p>
+
+<p>
+	The CEO leaned across the table, got in my face, and said, "this, is a <i>monumental</i> fuck up. You're gonna cost us millions in revenue". His co-founder (remotely present via Skype) chimed in "you're lucky to still be here".
+</p>
+
+<p>
+	As a company we spent the next few days doing damage control. All work on games ceased. The technical crew tried to stitch together a likely semblance of the USERS table, based on data in other tables. The non-technical crew dealt with angry customers, and did data entry, for those claiming to remember their stats perfectly. I for one didn't go home for three days straight. I stank.
+</p>
+
+<p>
+	At no point was it publicly announced that I was responsible for all this. An email was sent out claiming that a 'junior engineer' was responsible. I was one of two people who could be considered 'junior'.
+</p>
+
+<p>
+	Within three days, it was clear that everyone knew it was me. People treated me differently. For a select few, there was a new empathy. For most, there was anger and distrust. For those, this company represented simply the best job they'd ever had. I put the company in jeopardy, and thus their happiness and livelihood. 
+</p>
+
+<p>
+	I found myself weighed down with feelings of guilt and inadequacy. I apologized publicly at a 'whole company' meeting one day. There was applause.
+</p>
+
+<p>
+	A month or so later I wrote a letter of resignation to the CEO and my PM. I left town the next day, headed ultimately for New York City.
+</p>
+  <p>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-text="How I Fired Myself" data-via="recborg">Tweet</a>
+  </p>
+  
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.myles-footer').css({'width': '550px', 'font-size': '22px'})
+  });
+</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
