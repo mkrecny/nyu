@@ -1,6 +1,5 @@
 <div class="stack-el navigator skinny headroom-s">
 <% if (!thought){ %>
-  <a href="/">root</a>
   <% if (classname){ %>
   / <a href="/class/<%= classname %>"><%= classname %></a> 
   <% } %>
@@ -15,7 +14,9 @@
 <div class="full">
   <%- partial(contentPartial) %>
 </div>
-<div class="myles-footer stack-el skinny footroom-l">
-<hr>
-  This was written by <a href="http://recb.org">Myles</a>
+<div class="myles-footer stack-el footroom-l">
+  <hr>
+  This was written by <a class="blog-link" href="http://recb.org">Myles</a>
+  <br>
+  <span class="more-posts" style="opacity:0.3"><a href="/">more posts</a></span>
 </div>

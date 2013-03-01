@@ -8,6 +8,21 @@
   font-weight:400;
 }
 
+.blog-link{
+  opacity:0.5;
+  color:black;
+  text-decoration:none;
+}
+
+.blog-link:hover{
+  text-decoration:none;
+}
+
+.myles-footer{
+  width:550px;
+  font-size:22px;
+}
+
 .navigator a {
   /*font-size:1.6em;*/
   color:#202020;
