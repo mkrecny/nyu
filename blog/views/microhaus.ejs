@@ -25,6 +25,10 @@
     b) the project you intend to work on at Microhaus.
   </p>
   <p>
+    <u><span style="cursor:pointer" class="faq-toggle">FAQ</span></u>
+  </p>
+  <div style="display:none" class="faq">
+  <p>
   <hr>
   </p>
   <p>
@@ -41,13 +45,23 @@
     <strong>What can I work on?</strong><br>
     That's up to you.
   </p>
+  </div>
   <p>
     <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://microha.us" data-text="Microhaus | an incubator for individuals">Tweet</a>
+  </p>
+  <p>
+  <hr>
+
+    <span style="opacity:0.6">Microhaus is powered by  <a href="https://followgen.com"><span style="opacity:0.6">follow<b>gen</b></span></a></span>
   </p>
   
 </div>
 <script>
   $(document).ready(function(){
     $('.myles-footer').hide();
+    $('.faq-toggle').click(function(){
+      $('.faq').toggle();
+    });
   });
+  
 </script>
