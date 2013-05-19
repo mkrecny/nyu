@@ -4,6 +4,10 @@
   margin:0px auto;
 }
 
+.italic {
+  font-style:italic;
+}
+
 .navigator{
   font-weight:400;
 }
