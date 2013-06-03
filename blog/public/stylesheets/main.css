@@ -4,6 +4,11 @@
   margin:0px auto;
 }
 
+.micro-persona{
+  width:200px;
+  border:2px solid #eee;
+}
+
 .italic {
   font-style:italic;
 }
