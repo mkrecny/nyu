@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var port = process.argv[2] || 3000;
+var port = process.argv[2] || 80;
 
 var express = require('express')
   , routes = require('./routes');
