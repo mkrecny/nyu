@@ -32,7 +32,8 @@ exports.thought = function(req, res){
     classname: false,
     week: false,
     assignment: false,
-    thought:req.params.thought
+    thought:req.params.thought,
+    title:req.params.thought.split('-').join(' ')
   });
 }
 
