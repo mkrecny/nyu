@@ -37,7 +37,6 @@ app.get('/class/:class', routes.class);
 app.get('/class/:class/week/:week', routes.week);
 app.get('/class/:class/week/:week/assignment/:assignment', routes.assignment);
 app.get('/thoughts/:thought', routes.thought);
-app.get('/:thought', routes.thought);
 
 app.listen(port, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
