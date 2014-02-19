@@ -32,6 +32,7 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', routes.index);
+app.get('/:view', routes.view);
 app.get('/mudex', routes.mudex);
 app.get('/class/:class', routes.class);
 app.get('/class/:class/week/:week', routes.week);

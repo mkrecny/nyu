@@ -15,6 +15,12 @@ exports.index = function(req, res){
   });
 };
 
+exports.view = function(req, res){
+  res.render(req.params.view, {
+    title:req.params.view.split('-').join(' ')
+  });
+}
+
 exports.mudex = function(req, res){
   res.render('index', {
     data:mudex,
@@ -36,6 +42,8 @@ exports.thought = function(req, res){
     title:req.params.thought.split('-').join(' ')
   });
 }
+
+
 
 //render all weeks of a class
 exports.class = function(req, res){
