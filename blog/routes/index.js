@@ -17,6 +17,7 @@ exports.index = function(req, res){
 
 exports.view = function(req, res){
   res.render(req.params.view, {
+    layout:false,
     title:req.params.view.split('-').join(' ')
   });
 }
