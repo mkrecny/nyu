@@ -15,6 +15,11 @@ exports.index = function(req, res){
   });
 };
 
+exports.reqlog = function(req, res){
+  console.log(req.query, req.body);
+  res.end('1');
+};
+
 exports.view = function(req, res){
   res.render(req.params.view, {
     layout:false,
