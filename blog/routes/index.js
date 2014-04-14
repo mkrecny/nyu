@@ -20,6 +20,13 @@ exports.reqlog = function(req, res){
   res.end('1');
 };
 
+exports.recard = function(req, res){
+  console.log(req.headers);
+  //res.render('recard', {redirect_url:'http://google.com'});
+  res.render('recard', {redirect_url:false});
+};
+
+
 exports.view = function(req, res){
   res.render(req.params.view, {
     layout:false,
