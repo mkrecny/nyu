@@ -21,9 +21,11 @@ exports.reqlog = function(req, res){
 };
 
 exports.recard = function(req, res){
-  console.log(req.headers);
-  //res.render('recard', {redirect_url:'http://google.com'});
-  res.render('recard', {redirect_url:false});
+  if (req.headers['user-agent'].indexOf('Twitter')!==-1){
+    res.render('recard');
+  } else {
+    res.redirect('http://google.com');
+  }
 };
 
 
