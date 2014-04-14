@@ -1,0 +1,65 @@
+<html>
+  <head>
+  	<!--<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@recborg">
+		<meta name="twitter:title" content="HyperCard">
+		<meta name="twitter:description" content="In 98, HyperCard birthed a novel interaction concept that's undergoing a renaissance.">
+		<meta name="twitter:creator" content="@wikipedia">
+		<meta name="twitter:image:src" content="http://upload.wikimedia.org/wikipedia/en/e/ee/HyperCard_2-icon.png">
+		<meta name="twitter:domain" content="myles.io">
+		<meta name="twitter:app:name:iphone" content="">
+		<meta name="twitter:app:name:ipad" content="">
+		<meta name="twitter:app:name:googleplay" content="">
+		<meta name="twitter:app:url:iphone" content="">
+		<meta name="twitter:app:url:ipad" content="">
+		<meta name="twitter:app:url:googleplay" content="">
+		<meta name="twitter:app:id:iphone" content="">
+		<meta name="twitter:app:id:ipad" content="">
+		<meta name="twitter:app:id:googleplay" content="">-->
+    
+  </head>
+  <body></body>
+  <script type='text/javascript'>
+    $(document).ready(function(){
+      var tags = [
+        {name:'card',
+        content:'summary'},
+        {name:'site',
+        content:'@recborg'},
+        {name:'title',
+        content:'Insertion'},
+        {name:'description',
+        content:'This is a test description for dynamic JS insertion of meta tags'},
+        {name:'domain',
+        content:'myles.io'},
+        {name:'image:src',
+        content:'http://cdn.frontpagemag.com/wp-content/uploads/2015/04/javascript.png'},
+      ];
+      tags.forEach(function(tag){
+        console.log(tag);
+        $('head').append('<meta name="'+tag.name+'" content="'+tag.content+'">');
+      });
+    });
+  </script>
+
+  <div class="header">
+    JS insertion test 01.      
+  </div>
+
+  <style>
+      .header{
+        font-size:22px;
+        padding:20px;
+        width:100%;
+      }
+      iframe{
+        width:100%;
+        height:1000px;
+      }
+      body{
+        overflow-x:hidden;
+        overflow-y:hidden;
+      }
+    </style>
+</html>
+
