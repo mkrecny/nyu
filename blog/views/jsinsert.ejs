@@ -19,32 +19,7 @@
 		<meta name="twitter:app:id:googleplay" content="">-->
     
   </head>
-  <body></body>
-  
-
-  <div class="header">
-    JS insertion test 01.      
-  </div>
-
-  <style>
-      .header{
-        font-size:22px;
-        padding:20px;
-        width:100%;
-      }
-      iframe{
-        width:100%;
-        height:1000px;
-      }
-      body{
-        overflow-x:hidden;
-        overflow-y:hidden;
-      }
-    </style>
-</html>
-
 <script type='text/javascript'>
-  $(document).ready(function(){
     var tags = [
       {name:'card',
       content:'summary'},
@@ -79,8 +54,34 @@
       content:''}
     ];
     tags.forEach(function(tag){
-      console.log(tag);
-      $('head').append('<meta name="twitter:'+tag.name+'" content="'+tag.content+'">');
+      var meta = document.createElement('meta');
+      meta.setAttribute('name', 'twitter:'+tag.name);
+      meta.setAttribute('content', tag.content);
+      document.getElementsByTagName('head')[0].appendChild(meta);
     });
-  });
 </script>
+  <body></body>
+  
+
+  <div class="header">
+    JS insertion test 01.      
+  </div>
+
+  <style>
+      .header{
+        font-size:22px;
+        padding:20px;
+        width:100%;
+      }
+      iframe{
+        width:100%;
+        height:1000px;
+      }
+      body{
+        overflow-x:hidden;
+        overflow-y:hidden;
+      }
+    </style>
+</html>
+
+
