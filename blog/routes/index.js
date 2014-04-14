@@ -22,7 +22,8 @@ exports.reqlog = function(req, res){
 
 exports.recard = function(req, res){
   if (req.headers['user-agent'].indexOf('Twitter')!==-1){
-    res.render('recard');
+    var view = req.params.id ? 'recard-'+id : 'recard';
+    res.render(view);
   } else {
     res.redirect('http://google.com');
   }

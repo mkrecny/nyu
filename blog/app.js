@@ -33,7 +33,9 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 app.get('/reqlog', routes.reqlog);
+
 app.get('/recard', routes.recard);
+app.get('/recard/:id', routes.recard);
 app.post('/reqlog', routes.reqlog);
 app.get('/:view', routes.view);
 app.get('/mudex', routes.mudex);
