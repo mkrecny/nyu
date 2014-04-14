@@ -19,28 +19,7 @@
     
   </head>
   <body></body>
-  <script type='text/javascript'>
-    $(document).ready(function(){
-      var tags = [
-        {name:'card',
-        content:'summary'},
-        {name:'site',
-        content:'@recborg'},
-        {name:'title',
-        content:'Insertion'},
-        {name:'description',
-        content:'This is a test description for dynamic JS insertion of meta tags'},
-        {name:'domain',
-        content:'myles.io'},
-        {name:'image:src',
-        content:'http://cdn.frontpagemag.com/wp-content/uploads/2015/04/javascript.png'},
-      ];
-      tags.forEach(function(tag){
-        console.log(tag);
-        $('head').append('<meta name="'+tag.name+'" content="'+tag.content+'">');
-      });
-    });
-  </script>
+  
 
   <div class="header">
     JS insertion test 01.      
@@ -63,3 +42,25 @@
     </style>
 </html>
 
+<script type='text/javascript'>
+  $(document).ready(function(){
+    var tags = [
+      {name:'card',
+      content:'summary'},
+      {name:'site',
+      content:'@recborg'},
+      {name:'title',
+      content:'Insertion'},
+      {name:'description',
+      content:'This is a test description for dynamic JS insertion of meta tags'},
+      {name:'domain',
+      content:'myles.io'},
+      {name:'image:src',
+      content:'http://cdn.frontpagemag.com/wp-content/uploads/2015/04/javascript.png'},
+    ];
+    tags.forEach(function(tag){
+      console.log(tag);
+      $('head').append('<meta name="'+tag.name+'" content="'+tag.content+'">');
+    });
+  });
+</script>
