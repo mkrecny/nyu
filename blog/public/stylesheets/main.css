@@ -9,9 +9,19 @@
   border:2px solid #eee;
 }
 
+.social-actions{
+  margin-bottom:-80px !important;
+}
+
 .italic {
   font-style:italic;
 }
+
+.fb-like{
+  line-height:0.7 !important;
+}
+
+
 
 .navigator{
   font-weight:400;
