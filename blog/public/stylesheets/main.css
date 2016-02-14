@@ -21,7 +21,14 @@
   margin-left: 10px !important;
 }
 
+.blog-links{
+  margin-bottom:40px;
+}
 
+.blog-links > a{
+  color:black;
+  font-size:20px;
+}
 
 .navigator{
   font-weight:400;
@@ -38,8 +45,8 @@
 }
 
 .myles-footer{
-  width:550px;
-  font-size:22px;
+  width:555px;
+  font-size:18px;
 }
 
 .navigator a {

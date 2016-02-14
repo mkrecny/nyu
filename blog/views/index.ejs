@@ -1,28 +1,31 @@
 <div class="stack-el navigator skinny headroom-s">
-<% if (!thought){ %>
-  <% if (classname){ %>
-  / <a href="/class/<%= classname %>"><%= classname %></a>
+  <% if (!thought){ %>
+    <% if (classname){ %>
+    / <a href="/class/<%= classname %>"><%= classname %></a>
+    <% } %>
+    <% if (week){ %>
+    / <a href="/class/<%= classname %>">week <%= week %></a>
+    <% } %>
+    <% if (assignment){ %>
+    / <a href="/class/<%= classname %>/week/<%= week %>/assignment/<%= assignment %>"><%= assignment %></a>
+    <% } %>
   <% } %>
-  <% if (week){ %>
-  / <a href="/class/<%= classname %>">week <%= week %></a>
-  <% } %>
-  <% if (assignment){ %>
-  / <a href="/class/<%= classname %>/week/<%= week %>/assignment/<%= assignment %>"><%= assignment %></a>
-  <% } %>
-<% } %>
 </div>
+
 <div class="full">
   <%- partial(contentPartial) %>
 </div>
+
 <div class="myles-footer stack-el footroom-l">
   <hr>
-  by <a href="http://twitter.com/recborg">Myles</a>
-   <span class="more-posts" style="">| <a href="http://myles.io">read more posts</a></span>
+  <a href="http://myles.io">more posts</a></span>
    | <span class="" style=""><a href="http://visitor.r20.constantcontact.com/manage/optin/ea?v=001xzhc59f6LQ_eTSA9m3uKLQ%3D%3D">mailing list</a></span>
-<hr>
-<p>
-<span style="font-size:80%">
-<img style="width:20px;border:1px solid #FFF000" src="/images/prof_blog_dark.jpg" />
-<i>Myles</i> is a programmer and entrepreneur who lives in London. Currently working for <a href="http://palantir.com">Palantir</a>.</span>
-</p>
+  <hr>
+  <p>
+    <span style="font-size:80%">
+      <img style="width:20px;border:1px solid #FFF000" src="/images/prof_blog_dark.jpg" />
+      <a href="https://twitter.com/recborg"><i>Myles</i></a> is a geek who lives in London. Currently working with <a href="http://palantir.com">Palantir</a>.
+    </span>
+  </p>
+
 </div>

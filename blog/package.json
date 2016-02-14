@@ -1,9 +1,11 @@
 {
-    "name": "application-name"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "express": "2.5.8",
-      "ejs" : ""
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "ejs": "^2.4.1",
+    "express": "2.5.8",
+    "marked": "^0.3.5"
   }
 }
