@@ -1,4 +1,4 @@
-I wasn’t one of those kids - like many of you - who started programming at eight years old. Instead, gaming consumed me at that age. Commander Keen, Diablo and Quake held me in thrall. 
+I wasn’t one of those kids who started programming at eight years old. Instead, gaming consumed me at that age. Commander Keen, Diablo and Quake held me in thrall. 
 
 My first impulse to start programming was the impulse to make my own games. It came at around age twelve. I never got very far with it. In fact, I never got beyond a few bewildering tutorials on the Python REPL. I couldn’t see a path from those cryptic runes in my terminal, to the rich and fantastic worlds I explored in games.
 

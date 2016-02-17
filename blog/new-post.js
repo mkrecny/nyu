@@ -28,8 +28,13 @@ fs.writeFileSync('./views/'+url+'.ejs', rendered)
 
 var $ = cheerio.load(landing);
 
+var url_full = 'http://myles.io/thoughts/'+url
+
+//TODO : remove the link if it already exists (iterative viewing-ness)
+$('a[href="'+url_full+'"]').remove() && $('br').first().remove()
+
 //rewrite landing page with link
-$('.blog-links').prepend('<a href="http://myles.io/thoughts/'+url+'">'+title+'</a><br>')
+$('.blog-links').prepend('\n<a href="'+url_full+'">'+title+'</a><br>')
 fs.writeFileSync('./views/classes.ejs', $.html())
 
 console.log('http://localhost:8000/thoughts/'+url)
