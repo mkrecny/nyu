@@ -16,12 +16,12 @@
 
 <img src="/images/code.svg"> Those things _are_ implementation. You're just implementing with a different toolset or language.
 
-<img src="/images/person.svg"> Well, in any case .. I feel like when we spend all of our time talking I being to think in a very monochromatic way. And that's limiting.
+<img src="/images/person.svg"> Well, in any case .. I feel like when we spend all of our time talking I begin to think in a very monochromatic way. It's limiting.
 
 <img src="/images/code.svg"> Okay well how about this. Your technical side is atrophying. All that EQ you're building seems to be coming at a cost.
 
 <img src="/images/person.svg"> Perhaps. But it's worth it. My new role is forcing me to be a better communicator. And to be more empathetic. Do you realize how healthy this has been for me socially? How nourishing?
 
-<img src="/images/code.svg"> I'll miss you
+<img src="/images/code.svg"> I'll miss you.
 
 <img src="/images/person.svg"> You too.
