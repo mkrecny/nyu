@@ -24,6 +24,4 @@
 
 <img src="/images/code.svg"> I'll miss you
 
-<img src="/images/person.svg"> You too. We can still hang out on the weekends right?.
-
-<img src="/images/code.svg"> Right.
+<img src="/images/person.svg"> You too.
